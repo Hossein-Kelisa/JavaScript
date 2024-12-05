@@ -11,7 +11,18 @@ const list = [1721, 979, 366, 299, 675, 1456];
 let result;
     
 // Write your code here
+const complements = new Set();
 
+for (const num of list) {
+  const complement = 2020 - num; 
+  if (complements.has(complement)) {
+    result = num * complement;
+    break;
+  }
+  complements.add(num);
+}
+
+if(result) console.log(result);
 
 // TEST CODE, do not change
 console.assert(result === 514579, `The result is not correct, it is ${result}, but should be 514579`);
